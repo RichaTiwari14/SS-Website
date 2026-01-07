@@ -1,0 +1,444 @@
+/* ============================================
+   LOGIN PAGE - BRAND COLORS + GLASS EFFECT
+   Primary: #0259DE (Blue)
+   Secondary: #FD6649 (Orange)
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.welcome-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0259DE 0%, #0147B5 50%, #023A8F 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   ANIMATED BACKGROUND BLOBS
+   ============================================ */
+.welcome-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
+}
+
+.welcome-blob-1 {
+  width: 500px;
+  height: 500px;
+  background: #FD6649;
+  top: -150px;
+  right: -150px;
+  animation-delay: 0s;
+}
+
+.welcome-blob-2 {
+  width: 400px;
+  height: 400px;
+  background: #FD6649;
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -10s;
+}
+
+.welcome-blob-3 {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.welcome-container {
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   GLASS CARD
+   ============================================ */
+.welcome-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 40px 35px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine Effect */
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.welcome-card:hover::before {
+  left: 100%;
+}
+
+/* ============================================
+   LOGO - STATIC (NO ANIMATION)
+   ============================================ */
+.welcome-logo-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.welcome-logo-image {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+  /* NO ANIMATION - Removed logoFloat */
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+.welcome-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.welcome-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-input-wrapper {
+  position: relative;
+}
+
+.welcome-input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  z-index: 1;
+}
+
+.welcome-input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 500;
+}
+
+.welcome-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.welcome-input:focus {
+  outline: none;
+  /* border-color: #FD6649; */
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 0 0 3px rgba(253, 102, 73, 0.2),
+    0 4px 15px rgba(253, 102, 73, 0.3);
+}
+
+/* Password Toggle */
+.welcome-password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.welcome-password-toggle:hover {
+  color: #FD6649;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ============================================
+   ERROR ALERT
+   ============================================ */
+.welcome-error {
+  background: rgba(253, 102, 73, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(253, 102, 73, 0.4);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: shake 0.3s ease;
+  box-shadow: 0 4px 15px rgba(253, 102, 73, 0.3);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+.welcome-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #FD6649 0%, #FF8670 100%);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(253, 102, 73, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Button Shine Effect */
+.welcome-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.welcome-button:hover::before {
+  left: 100%;
+}
+
+.welcome-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 30px rgba(253, 102, 73, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.welcome-button:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.welcome-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.welcome-button-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.welcome-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: welcome-spin 0.6s linear infinite;
+}
+
+@keyframes welcome-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.welcome-footer {
+  text-align: center;
+  margin-top: 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.welcome-footer-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 640px) {
+  .welcome-page {
+    padding: 15px;
+  }
+
+  .welcome-card {
+    padding: 35px 25px;
+  }
+
+  .welcome-logo-image {
+    width: 140px;
+  }
+
+  .welcome-blob-1,
+  .welcome-blob-2 {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-card {
+    padding: 30px 20px;
+  }
+
+  .welcome-logo-image {
+    width: 120px;
+  }
+
+  .welcome-input {
+    padding: 12px 15px 12px 42px;
+    font-size: 14px;
+  }
+
+  .welcome-button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .welcome-blob-1,
+  .welcome-blob-2 {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.welcome-input:focus-visible,
+.welcome-button:focus-visible,
+.welcome-password-toggle:focus-visible {
+  outline: 3px solid #FD6649;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .welcome-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .welcome-page {
+    background: white;
+  }
+  
+  .welcome-bg-blob {
+    display: none;
+  }
+  
+  .welcome-card {
+    background: white;
+    border: 2px solid #0259DE;
+    box-shadow: none;
+  }
+}

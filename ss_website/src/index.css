@@ -1,32 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Aeonik:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer utilities {
+  @keyframes scroll-slow {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-slow {
+    animation: scroll-slow 50s linear infinite;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #0F172A;
-  background: #FFFFFF;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
+/* index.css */
+/* Pura page ka default cursor hide karo */
+html, body, * {
+  cursor: none !important;
 }

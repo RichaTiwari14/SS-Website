@@ -1,8 +1,8 @@
 // App.jsx - Complete Final Code
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, useInView, useMotionValue, AnimatePresence } from "framer-motion";
-import banner3 from "../public/banner3-Photoroom.PNG"
-import banner7 from "../public/banner7.PNG"
+import banner3 from "../public/banner3-Photoroom.png"
+import banner7 from "../public/banner7.png"
 
 import Services from "./components/Services"
 import Footer from "./components/Footer"

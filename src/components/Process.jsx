@@ -1,7 +1,7 @@
 // ProcessPage.jsx
 import React from "react";
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
-import banner3 from "../../public/banner3-Photoroom.PNG"
+import banner3 from "../../public/banner3-Photoroom.png"
 
 // 🎯 3D Image Component with Advanced Motion
 const Motion3DImage = ({ src, alt, className = "", delay = 0 }) => {

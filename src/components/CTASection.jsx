@@ -1,7 +1,7 @@
 // CTASection.jsx
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import banner7 from "../../public/banner7.PNG"
+import banner7 from "../../public/banner7.png"
 
 // Section Component
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {

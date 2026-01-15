@@ -198,6 +198,9 @@ const About = () => {
             <Motion3DImage
               src="/banner4-Photoroom.png"
               alt="About Us 3D"
+              loading="lazy" 
+               width={500}
+  height={450}
               className="w-full h-[400px] md:h-[450px]"
             />
           </motion.div>

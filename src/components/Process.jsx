@@ -1,17 +1,17 @@
-// Process.jsx
+// ProcessPage.jsx
 import React from "react";
-import { motion, useInView } from "framer-motion";
-// import banner3 from "../public/banner3-Photoroom.png"
+import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
+import banner3 from "../../public/banner3-Photoroom.PNG"
 
 // 🎯 3D Image Component with Advanced Motion
 const Motion3DImage = ({ src, alt, className = "", delay = 0 }) => {
   const ref = React.useRef(null);
-  const mouseX = motion.useMotionValue(0);
-  const mouseY = motion.useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const rotateX = motion.useTransform(mouseY, [-300, 300], [10, -10]);
-  const rotateY = motion.useTransform(mouseX, [-300, 300], [-10, 10]);
+  const rotateX = useTransform(mouseY, [-300, 300], [10, -10]);
+  const rotateY = useTransform(mouseX, [-300, 300], [-10, 10]);
 
   const handleMouseMove = (e) => {
     const rect = ref.current?.getBoundingClientRect();
@@ -133,7 +133,7 @@ const ProcessStep = ({ number, title, description, isLast = false }) => {
   );
 };
 
-// Main Process Component
+// Main Process Page Component
 const Process = () => {
   // ✅ Process Steps (5 steps)
   const processSteps = [
@@ -179,7 +179,8 @@ const Process = () => {
           </div>
 
           <Motion3DImage
-            // src={banner3}
+            src={banner3}
+            loading="lazy" 
             alt="Process 3D"
             className="w-full h-[450px] md:h-[500px] lg:h-[800px]"
             delay={0.3}

@@ -20,10 +20,9 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/aboutdetail" },
     { name: "Our Work", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -31,31 +30,26 @@ const Footer = () => {
     { 
       name: "LinkedIn", 
       icon: <FaLinkedinIn size={16} />, 
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/company/socialsparkindia",
       color: "hover:bg-[#0077B5]" 
     },
     { 
       name: "Instagram", 
       icon: <FaInstagram size={16} />, 
-      href: "https://instagram.com",
+      href:"https://instagram.com/socialsparkindia",
       color: "hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737]" 
     },
-    { 
-      name: "Twitter", 
-      icon: <FaTwitter size={16} />, 
-      href: "https://twitter.com",
-      color: "hover:bg-[#1DA1F2]" 
-    },
+   
     { 
       name: "Facebook", 
       icon: <FaFacebookF size={16} />, 
-      href: "https://facebook.com",
+      href: "https://facebook.com/socialsparkindia",
       color: "hover:bg-[#1877F2]" 
     },
     { 
       name: "YouTube", 
       icon: <FaYoutube size={16} />, 
-      href: "https://youtube.com",
+      href: "https://www.youtube.com/@SocialSparkIndia",
       color: "hover:bg-[#FF0000]" 
     },
     { 
@@ -155,19 +149,19 @@ Social Spark India partners with brands to create meaningful presence through cl
               <li className="flex items-center gap-3 text-sm">
                 <HiMail className="text-[#FF6A3D] text-lg flex-shrink-0" />
                 <a 
-                  href="mailto:hello@socialspark.in" 
+                  href="mailto:socialspark20@gmail.com" 
                   className="text-[#DFDFDF] hover:text-[#FF6A3D] transition-colors"
                 >
-                  hello@socialspark.in
+                  socialspark20@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <HiPhone className="text-[#FF6A3D] text-lg flex-shrink-0" />
                 <a 
-                  href="tel:+919876543210" 
+                  href="tel:+91-7000874785" 
                   className="text-[#DFDFDF] hover:text-[#FF6A3D] transition-colors"
                 >
-                  +91 98765 43210
+                 +91-7000874785
                 </a>
               </li>
             </ul>

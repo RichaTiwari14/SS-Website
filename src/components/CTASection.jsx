@@ -1,7 +1,7 @@
 // CTASection.jsx
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import banner7 from "../../public/banner7.png";
+import banner7 from "../../public/banner7.PNG"
 
 // Section Component
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {
@@ -93,6 +93,7 @@ const CTASection = () => {
           >
             <img
               src={banner7}
+              loading="lazy" 
               alt="CTA 3D"
               className="w-full h-full object-contain drop-shadow-2xl"
             />
